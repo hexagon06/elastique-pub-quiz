@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "text": "Bij het aanmaken van jouw karakter heeft de DM gezegd dat het alleen een humanoid mocht zijn.",
+      "vraag": "Welk ras viel af?",
+      "options": [
+        {
+          "text": "Elf"
+        },
+        {
+          "text": "Halfling"
+        },
+        {
+          "text": "Warforged",
+          "isRight": true
+        },
+        {
+          "text": "Dragonborn",
+          "isRight": true
+        }
+      ]
+    },
+    {
+      "text": "Bij het begin van het spel heeft de DM een aantal regels uitgelegd.",
+      "vraag": "Hoeveel zijden heeft de belangrijkste dobbelsteen?",
+      "options": [
+        {
+          "text": "6"
+        },
+        {
+          "text": "12"
+        },
+        {
+          "text": "20",
+          "isRight": true
+        },
+        {
+          "text": "100"
+        }
+      ]
+    },
+    {
+      "text": "Het spel begint. De DM legt jullie uit dat Rolo, de zoon van de smid, vermist is. De smid vraagt jullie om hulp hem te vinden."
+    },
+    {
+      "text": "Jullie besluiten in het dorp rond te gaan vragen of iemand weet waar hij is? Ro'yal, een dorpeling, verteld dat hij hem in de put heeft zien vallen. Je vertrouwt het niet helemaal en vraagt aan de DM of je Ro'yal vertrouwd.",
+      "vraag": "Welke ability moet je gebruiken om te bepalen of je hem gelooft?",
+      "options": [
+        {
+          "text": "Charisma"
+        },
+        {
+          "text": "Wisdom",
+          "isRight": true
+        },
+        {
+          "text": "Warlock"
+        },
+        {
+          "text": "Mage"
+        }
+      ]
+    },
+    {
+      "text": "Ro'yal bleek een leugenaar te zijn. Na wat verder rond te vragen komen jullie er achter dat Rollo het bos is ingegaan.",
+      "vraag": "Welke skill ga je gebruiken om zijn sporen te volgen?",
+      "options": [
+        {
+          "text": "Pathfinding"
+        },
+        {
+          "text": "Survival",
+          "isRight": true
+        },
+        {
+          "text": "Insight"
+        },
+        {
+          "text": "Search"
+        }
+      ]
+    }
+  ]
+}

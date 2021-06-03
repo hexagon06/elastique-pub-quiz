@@ -1,0 +1,113 @@
+{
+  "questions": [
+    {
+      "text": "In welke tv serie werd er GEEN Dungeons & Dragons gespeeld?",
+      "options": [
+        {
+          "text": "The Big Bang Theory"
+        },
+        {
+          "text": "Stranger Things"
+        },
+        {
+          "text": "GTST",
+          "isRight": true
+        }
+      ]
+    },
+    {
+      "text": "Hoeveel zijden heeft de belangrijkste dobbelsteen in D&D?",
+      "options": [
+        {
+          "text": "6"
+        },
+        {
+          "text": "12"
+        },
+        {
+          "text": "20",
+          "isRight": true
+        },
+        {
+          "text": "100"
+        }
+      ]
+    },
+    {
+      "text": "Welke class krijgt magie van zijn familie?",
+      "options": [
+        {
+          "text": "Druid"
+        },
+        {
+          "text": "Sorcerer",
+          "isRight": true
+        },
+        {
+          "text": "Warlock"
+        },
+        {
+          "text": "Mage"
+        }
+      ]
+    },
+    {
+      "text": "Who is also knows as the \"Father of role-playing games\"?",
+      "answer": "Gary Gygax"
+    },
+    {
+      "text": "Which of these acronyms does not stand for a core rulebook?",
+      "options": [
+        {
+          "text": "MM"
+        },
+        {
+          "text": "VTG",
+          "isRight": true
+        },
+        {
+          "text": "PHB"
+        },
+        {
+          "text": "DMG"
+        }
+      ]
+    },
+    {
+      "text": "Welk creatuur heeft 6 benen en 2 staarten?",
+      "options": [
+        {
+          "text": "Oblox"
+        },
+        {
+          "text": "Displacer Beast",
+          "isRight": true
+        },
+        {
+          "text": "Red Dragon"
+        },
+        {
+          "text": "Hydra"
+        }
+      ]
+    },
+    {
+      "text": "Wat was het eerste gepubliceerde avontuur voor de 5e editie van D&D?",
+      "options": [
+        {
+          "text": "Hoard of the Dragon Queen"
+        },
+        {
+          "text": "Lost Mine of Phandelver",
+          "isRight": true
+        },
+        {
+          "text": "Curse of Strahd"
+        },
+        {
+          "text": "Down Memory Lane"
+        }
+      ]
+    }
+  ]
+}

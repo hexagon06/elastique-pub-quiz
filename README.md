@@ -1,6 +1,9 @@
-# ElastiquePubQuiz
+# Elastique Pub Quiz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+Hey wat leuk dat jullie hiernaar kijken!
+Dit is mijn pop quiz rondom Dungeons & Dragons.
+
+Hoeveel weet jij van deze hobby?
 
 ## Development server
 
