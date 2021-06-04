@@ -1,30 +1,18 @@
 # Elastique Pub Quiz
 
 Hey wat leuk dat jullie hiernaar kijken!
-Dit is mijn pop quiz rondom Dungeons & Dragons.
+Dit is mijn pop quiz rondom Dungeons & Dragons (D&D).
+
+Omdat D&D vaak vooral draait om het verhaal wat je samen doormaakt zijn de vragen geschreven als of een speler bent in het spel.
 
 Hoeveel weet jij van deze hobby?
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Als je deze applicatie wilt bouwen en bekijken gebruik dan `yarn watch` vanuit deze directory.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Je kunt dan `http://localhost:4200/` bekijken om de app te zien. Als je met meerdere spelers bent kun je meerdere tabbladen/windows openen om te zien wie het beste het avontuur doorkomt.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Voor deze opdracht heb ik me niet gefocussed op het maken van een productiebuild. Daarvoor heb ik gewoon de standaard in tact gelaten.

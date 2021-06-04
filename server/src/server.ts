@@ -20,7 +20,7 @@ function messagesAsString(): string {
 
 wss.on('connection', (ws: MyWebSocket) => {
   ws.isAlive = true;
-  console.log('new connection');
+  console.log('new connection 3');
 
   ws.on('pong', () => {
     console.log('pong');
@@ -40,7 +40,6 @@ wss.on('connection', (ws: MyWebSocket) => {
 
 setInterval(() => {
   wss.clients.forEach((ws: MyWebSocket) => {
-
     if (!ws.isAlive) {
       console.log('terminate');
       return ws.terminate();
@@ -59,6 +58,7 @@ function isAddressInfo(obj: any): obj is AddressInfo {
 //start our server
 server.listen(process.env.PORT || 8999, () => {
   const adresInfo = server.address()
+
   if (adresInfo && isAddressInfo(adresInfo)) {
     console.log(`Server started on port ${adresInfo.port} :)`);
   }
