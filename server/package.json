@@ -1,0 +1,22 @@
+{
+  "name": "my-ts-ws-server",
+  "version": "1.0.0",
+  "description": "refreshing websocket knowledge",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch-ts": "tsc -w",
+    "watch-node": "node dist/server/server.js --watch",
+    "watch": "yarn watch-ts & yarn watch-node",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^7.4.6"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.2",
+    "@types/express": "^4.17.12",
+    "@types/ws": "^7.4.4"
+  }
+}
