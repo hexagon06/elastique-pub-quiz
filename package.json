@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "server:watch": "cd server && yarn watch",
-    "client:watch": "cd app && yarn start",
+    "client:watch": "cd elastique-pub-quiz && yarn start",
     "watch": "concurrently \"yarn server:watch\" \"yarn client:watch\""
   },
   "devDependencies": {
