@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-question',
@@ -7,12 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./question.component.sass']
 })
 export class QuestionComponent implements OnInit {
+  name?: string;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private gameService: GameService,
   ) { }
 
   ngOnInit(): void {
+    this.name = this.gameService.getPlayerName();
   }
 
   onSubmit(event: Event): void {
