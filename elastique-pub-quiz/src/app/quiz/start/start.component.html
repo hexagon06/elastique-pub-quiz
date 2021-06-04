@@ -1,1 +1,6 @@
-<p>start works!</p>
+<p>Hey hallo! Wat leuk dat je meedoet!</p>
+<p>Deze quiz gaat over Dungeons & Dragons, of D&D in het kort.</p>
+<p>D&D is een rollenspel waar iedereen een karakter speelt, wat is jouw naam in dit avontuur?</p>
+<input type="text" [(ngModel)]="testText">
+<button type="submit" (click)="onSubmit($event)">Op avontuur! >></button>
+<p>{{testText}}</p>
