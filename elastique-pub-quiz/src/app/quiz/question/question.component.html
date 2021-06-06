@@ -1,3 +1,11 @@
 <h2>De avonturen van {{name}}</h2>
-<p>question works!</p>
+<div>
+  <p>{{question === undefined}}</p>
+  <p>{{question?.text}}</p>
+  <p>{{multiQuestion?.question}}{{openQuestion?.question}}</p>
+  <ul>
+    <li *ngFor="let option of multiQuestion?.options">{{option.text}}</li>
+  </ul>
+</div>
+
 <button type="submit" (click)="onSubmit($event)">Antwoord >></button>
