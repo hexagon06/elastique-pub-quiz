@@ -1,11 +1,15 @@
-<h2>De avonturen van {{name}}</h2>
-<div>
-  <p>{{question === undefined}}</p>
-  <p>{{question?.text}}</p>
-  <p>{{multiQuestion?.question}}{{openQuestion?.question}}</p>
-  <ul>
-    <li *ngFor="let option of multiQuestion?.options">{{option.text}}</li>
-  </ul>
-</div>
-
-<button type="submit" (click)="onSubmit($event)">Antwoord >></button>
+<mat-card>
+  <mat-card-title>De avonturen van {{name}}</mat-card-title>
+  <mat-card-content>
+    <p>{{question?.text}}</p>
+    <label id="question-label">{{multiQuestion?.question}}{{openQuestion?.question}}</label>
+    <mat-radio-group aria-labelledby="question-label" class="multiple-choice-group" [(ngModel)]="chosenOption">
+      <mat-radio-button *ngFor="let option of multiQuestion?.options" [value]="option" class="option-radio-button">
+        {{option.text}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" type="submit" (click)="onSubmit($event)">Antwoord >></button>
+  </mat-card-actions>
+</mat-card>

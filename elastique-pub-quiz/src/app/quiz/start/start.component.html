@@ -1,22 +1,25 @@
-<p>Hey hallo! Wat leuk dat je meedoet!</p>
-<p>Deze quiz gaat over Dungeons & Dragons, of D&D in het kort.</p>
-<p>D&D is een rollenspel waar iedereen een karakter speelt, wat is jouw naam in dit avontuur?</p>
 <form [formGroup]="characterForm" (ngSubmit)="onSubmit($event)">
-  <div>
-    <input type="text" class="form-control" formControlName="name" required>
-    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
-
-      <div *ngIf="name?.errors?.required">
-        Name is required.
-      </div>
-      <div *ngIf="name?.errors?.minlength">
-        Name must be at least 4 characters long.
-      </div>
-      <div *ngIf="name?.errors?.forbiddenName">
-        Name cannot be Bob.
-      </div>
-    </div>
-  </div>
-  <button type="submit" placeholder="Grog, Magus, Twix, etc." [disabled]="!characterForm.valid">Op avontuur!
-    >></button>
+  <mat-card>
+    <mat-card-title>Op avontuur!</mat-card-title>
+    <mat-card-content>
+      <p>Hey hallo! Wat leuk dat je meedoet!</p>
+      <p>Deze quiz gaat over Dungeons & Dragons, of D&D in het kort.</p>
+      <p>D&D is een rollenspel waar iedereen een karakter speelt, wat is jouw naam in dit avontuur?
+      </p>
+      <mat-form-field class="example-full-width">
+        <mat-label>karakter naam</mat-label>
+        <input type="text" matInput formControlName="name" required placeholder="e.g. Morningstar">
+        <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+        <mat-error *ngIf="name?.errors?.required">
+          Name is required.
+        </mat-error>
+        <mat-error *ngIf="name?.errors?.minlength">
+          Name must be at least 4 characters long.
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" type="submit" [disabled]="!characterForm.valid">Laten we beginnen!</button>
+    </mat-card-actions>
+  </mat-card>
 </form>

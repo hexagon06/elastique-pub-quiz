@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameService } from '../game.service';
-import { FlavorText, isFlavorText, isMultipleChoiceProblem, isOpenProblem, QuizQuestion } from '../interfaces';
+import { FlavorText, isFlavorText, isMultipleChoiceProblem, isOpenProblem, MultipleChoiceOption, QuizQuestion } from '../interfaces';
 import { MultipleChoiceQuestion } from '../multiple-choice-question';
 import { OpenQuestion } from '../open-question';
 
@@ -16,6 +16,7 @@ export class QuestionComponent implements OnInit {
   multiQuestion?: MultipleChoiceQuestion;
   openQuestion?: OpenQuestion;
   flavorText?: FlavorText;
+  chosenOption?: MultipleChoiceOption;
 
   constructor(
     private router: Router,
