@@ -20,7 +20,7 @@
   },
   {
     "text": "Bij het begin van het spel heeft de DM een aantal regels uitgelegd.",
-    "vraag": "Hoeveel zijden heeft de belangrijkste dobbelsteen?",
+    "question": "Hoeveel zijden heeft de belangrijkste dobbelsteen?",
     "options": [
       {
         "text": "6"
@@ -38,11 +38,11 @@
     ]
   },
   {
-    "text": "Het spel begint. De DM legt jullie uit dat Rolo, de zoon van de smid, vermist is. De smid vraagt jullie om hulp hem te vinden."
+    "text": "Het spel begint. De DM legt jullie uit dat Rolo, de zoon van de smid, vermist is. De smid questiont jullie om hulp hem te vinden."
   },
   {
-    "text": "Jullie besluiten in het dorp rond te gaan vragen of iemand weet waar hij is? Ro'yal, een dorpeling, verteld dat hij hem in de put heeft zien vallen. Je vertrouwt het niet helemaal en vraagt aan de DM of je Ro'yal vertrouwd.",
-    "vraag": "Welke ability moet je gebruiken om te bepalen of je hem gelooft?",
+    "text": "Jullie besluiten in het dorp rond te gaan vragen of iemand weet waar hij is? Ro'yal, een dorpeling, verteld dat hij hem in de put heeft zien vallen. Je vertrouwt het niet helemaal en questiont aan de DM of je Ro'yal vertrouwd.",
+    "question": "Welke ability moet je gebruiken om te bepalen of je hem gelooft?",
     "options": [
       {
         "text": "Charisma"
@@ -61,7 +61,7 @@
   },
   {
     "text": "Ro'yal bleek een leugenaar te zijn. Na wat verder rond te vragen komen jullie er achter dat Rollo het bos is ingegaan.",
-    "vraag": "Welke skill ga je gebruiken om zijn sporen te volgen?",
+    "question": "Welke skill ga je gebruiken om zijn sporen te volgen?",
     "options": [
       {
         "text": "Pathfinding"
@@ -80,7 +80,7 @@
   },
   {
     "text": "Je hebt een 'natural one' gerold op je skill check om de sporen te vinden",
-    "vraag": "Wat betekent dat als je de RAW volgt?",
+    "question": "Wat betekent dat als je de RAW volgt?",
     "options": [
       {
         "text": "Je hebt een 'critical failure' gerold en faalt dus automatisch."
@@ -99,7 +99,7 @@
   },
   {
     "text": "Jullie zijn aangekomen bij een ravijn en je dacht dat er een regel was die de monk erg ver liet springen.",
-    "vraag": "In welk boek zou je die regel opzoeken?",
+    "question": "In welk boek zou je die regel opzoeken?",
     "options": [
       {
         "text": "MM"
@@ -115,7 +115,7 @@
   },
   {
     "texst": "Je rolde een 'natural 20' om het beest te raken",
-    "vraag": "Wat betekent dat als je de RAW volgt?",
+    "question": "Wat betekent dat als je de RAW volgt?",
     "options": [
       {
         "text": "Je raakt automatisch."

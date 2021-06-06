@@ -1,3 +1,4 @@
+import { Flavor } from "./flavor";
 import { MultipleChoiceQuestion } from "./multiple-choice-question";
 import { OpenQuestion } from "./open-question";
 
@@ -24,7 +25,7 @@ export interface MultipleChoiceOption {
 }
 
 // export type QuestionScreenData = FlavorText | OpenProblem | MultipleChoiceProblem;
-export type QuizQuestion = FlavorText | OpenQuestion | MultipleChoiceQuestion;
+export type QuizQuestion = Flavor | OpenQuestion | MultipleChoiceQuestion;
 export interface Checkable {
   isAnswered: boolean;
   isCorrect?: boolean;
@@ -54,18 +55,18 @@ export function isMultipleChoiceProblem(obj: any): obj is MultipleChoiceProblem 
 }
 
 export interface MultipleChoiceAnswer {
-  optionText: string;
+  answer: number;
 }
 
 export interface OpenAnswer {
   answer: string;
 }
 
-export type QuizAnswer = OpenAnswer | MultipleChoiceAnswer
+export type QuizAnswer = OpenAnswer | MultipleChoiceAnswer | undefined; // undefined for flavor text
 
 export function isMultipleChoiceAnswer(obj: any): obj is MultipleChoiceAnswer {
   const a = obj as MultipleChoiceAnswer;
-  return a.optionText !== undefined && typeof (a.optionText) === 'string';
+  return a.answer !== undefined && typeof (a.answer) === 'number';
 }
 
 export function isOpenAnswer(obj: any): obj is OpenAnswer {

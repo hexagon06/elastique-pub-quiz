@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { isProblem, QuizQuestion } from './interfaces';
+import { BehaviorSubject } from 'rxjs';
+import { isProblem, QuizAnswer, QuizQuestion, isMultipleChoiceAnswer, isMultipleChoiceProblem, isOpenProblem, isOpenAnswer } from './interfaces';
 import { QuestionsService } from './questions.service';
 
 const NAME_KEY = 'quiz-name';
@@ -17,6 +18,7 @@ export class GameService {
   private set currentQuestion(n: number) {
     this.cQ = n;
     localStorage.setItem(QUESTION_KEY, `${n}`);
+    this.question$.next(this.getCurrentQuestion());
   }
   private maxQuestions = 0;
 
@@ -27,6 +29,7 @@ export class GameService {
     this.playerName = localStorage.getItem(NAME_KEY)?.toString();
     const questionIndex = localStorage.getItem(QUESTION_KEY);
     this.cQ = questionIndex ? parseInt(questionIndex) : -1;
+    this.question$.next(this.getCurrentQuestion());
   }
 
   public getPlayerName(): string | undefined {
@@ -52,7 +55,6 @@ export class GameService {
    * @returns the current question or undefined when the quiz has not started yet
    */
   public getCurrentQuestion(): QuizQuestion | undefined {
-    console.log(`game.service getCurrentQuestion: ${this.currentQuestion}`);
     if (this.currentQuestion !== -1) {
       return this.questionsService.get(this.currentQuestion);
     }
@@ -62,19 +64,33 @@ export class GameService {
   /**
    * Continue to the next question. will throw an error if the question has not been answered
    */
-  public continueAdventure(): boolean {
+  public continueAdventure(answer: QuizAnswer): boolean {
     const question = this.getCurrentQuestion();
     if (isProblem(question)) {
+      if (isMultipleChoiceAnswer(answer) && isMultipleChoiceProblem(question)) {
+        question.giveAnswer(answer.answer);
+      } else if (isOpenAnswer(answer) && isOpenProblem(question)) {
+        question.giveAnswer(answer.answer);
+      }
+
       if (question.isAnswered) {
         this.currentQuestion++;
       } else {
-        this.currentQuestion++;
-        // throw new Error(`the question '${question.question}' was not answered`);
+        // this.currentQuestion++;
+        throw new Error(`the question '${question.question}' was not answered`);
       }
     } else {
       // is flavor text
       this.currentQuestion++;
     }
+
     return this.currentQuestion < this.maxQuestions;
   }
+
+  //------------------REACTIVE----------------------
+
+  private question$ = new BehaviorSubject<QuizQuestion | undefined>(undefined);
+  public currentQuestion$ = this.question$.pipe(); // just to expose it as an observable instead of a subject
+
+
 }

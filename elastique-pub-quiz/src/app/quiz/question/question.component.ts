@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Flavor } from '../flavor';
 import { GameService } from '../game.service';
-import { FlavorText, isFlavorText, isMultipleChoiceProblem, isOpenProblem, MultipleChoiceOption, QuizQuestion } from '../interfaces';
+import { FlavorText, MultipleChoiceOption, QuizAnswer, QuizQuestion } from '../interfaces';
 import { MultipleChoiceQuestion } from '../multiple-choice-question';
 import { OpenQuestion } from '../open-question';
 
@@ -18,6 +21,9 @@ export class QuestionComponent implements OnInit {
   flavorText?: FlavorText;
   chosenOption?: MultipleChoiceOption;
 
+  multiQuestion$!: Observable<MultipleChoiceQuestion | undefined>;
+  flavorText$!: Observable<FlavorText | undefined>;
+
   constructor(
     private router: Router,
     private gameService: GameService,
@@ -25,34 +31,23 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.name = this.gameService.getPlayerName();
-
-    this.setQuestion();
+    this.multiQuestion$ = this.gameService.currentQuestion$.pipe(
+      // tap(q => console.log(`q: ${q instanceof MultipleChoiceQuestion}`)),
+      // tap(q => console.log(q)),
+      map(q => q instanceof MultipleChoiceQuestion ? q : undefined));
+    this.flavorText$ = this.gameService.currentQuestion$.pipe(
+      map(q => q instanceof Flavor ? q : undefined));
   }
 
-  setQuestion(): void {
-    const question = this.question = this.gameService.getCurrentQuestion();
-    // not the prettyest. If I have time I will find a proper templated typecheck way
-    if (isMultipleChoiceProblem(question)) {
-      this.multiQuestion = question;
-      this.openQuestion = this.flavorText = undefined;
-    } else if (isOpenProblem(question)) {
-      this.openQuestion = question;
-      this.multiQuestion = this.flavorText = undefined;
-    } else if (isFlavorText(question)) {
-      this.flavorText = question;
-      this.multiQuestion = this.openQuestion = undefined;
-    }
-  }
-
-  onSubmit(event: Event): void {
+  onSubmit(answer: QuizAnswer): void {
     // todo: do this with rxjs
-    const c = this.gameService.continueAdventure();
-    console.log(`c: ${c}`)
+    const c = this.gameService.continueAdventure(answer);
+    // console.log(`c: ${c}`)
     if (c) {
-      console.log('set question')
-      this.setQuestion();
+      // console.log('set question')
+      // this.setQuestion();
     } else {
-      console.log('goto score')
+      // console.log('goto score')
       this.router.navigate(['score']);
     }
   }

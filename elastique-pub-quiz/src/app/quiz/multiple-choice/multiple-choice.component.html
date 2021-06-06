@@ -1,0 +1,17 @@
+<form [formGroup]="choiceForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-content>
+      <p>{{text$ | async}}</p>
+      <mat-label id="question-label">{{questionText$ | async}}</mat-label>
+      <mat-radio-group aria-labelledby="question-label" class="multiple-choice-group" formControlName="choice" required>
+        <mat-radio-button *ngFor="let option of options$ | async; let i = index" [value]="i"
+                          class="option-radio-button">
+          {{option.text}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" type="submit" [disabled]="!choiceForm.valid">Ga verder >></button>
+    </mat-card-actions>
+  </mat-card>
+</form>

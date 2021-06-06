@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Flavor } from './flavor';
 import {
-  FlavorText,
   isFlavorText,
   isMultipleChoiceProblem,
   isOpenProblem,
@@ -28,7 +28,7 @@ export class QuestionsService {
       } else if (isOpenProblem(d)) {
         return new OpenQuestion(d);
       } else if (isFlavorText(d)) {
-        return d as FlavorText;
+        return new Flavor(d);
       }
       return undefined;
     }).filter((q: any) => q !== undefined) as QuizQuestion[];
