@@ -26,7 +26,6 @@ export class QuestionsService {
 
   constructor() {
     this.questions = (data as any).default.map((d: any) => {
-      // console.log(d);
       if (isMultipleChoiceProblem(d)) {
         return new MultipleChoiceQuestion(d);
       } else if (isOpenProblem(d)) {

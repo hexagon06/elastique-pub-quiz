@@ -1,0 +1,18 @@
+<form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-content>
+      <p>{{text$ | async}}</p>
+      <mat-label>{{questionText$ | async}}</mat-label>
+      <mat-form-field class="example-full-width">
+        <mat-label>antwoord</mat-label>
+        <input type="text" matInput formControlName="answer" required placeholder="e.g. Dragon, Orc, Wombat">
+        <mat-error *ngIf="answer?.errors?.required">
+          Antwoord is verijst.
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" type="submit" [disabled]="!answerForm.valid">Ga verder >></button>
+    </mat-card-actions>
+  </mat-card>
+</form>

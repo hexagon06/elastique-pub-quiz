@@ -32,7 +32,6 @@ export class GameService {
     this.maxQuestions = questionsService.totalQuestions;
     this.playerName = sessionStorage.getItem(NAME_KEY)?.toString();
     const questionIndex = sessionStorage.getItem(QUESTION_KEY);
-    console.log(`session storage item: ${this.playerName}`)
     this.cQ = questionIndex ? parseInt(questionIndex) : -1;
     this.question$.next(this.getCurrentQuestion());
   }
@@ -77,11 +76,9 @@ export class GameService {
       } else if (isOpenAnswer(answer) && isOpenProblem(question)) {
         question.giveAnswer(answer.answer);
       }
-
       if (question.isAnswered) {
         this.currentQuestion++;
       } else {
-        // this.currentQuestion++;
         throw new Error(`the question '${question.question}' was not answered`);
       }
     } else {

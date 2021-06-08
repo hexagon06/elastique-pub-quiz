@@ -13,9 +13,9 @@ describe('QuestionsService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should have 7 questions', () => {
-    const expectedAmount = 7;
-    expect(service.all.length).toEqual(expectedAmount);
-    expect(service.totalQuestions).toEqual(expectedAmount);
+  const questionAmount = 15;
+  it(`should have ${questionAmount} questions`, () => {
+    expect(service.all.length).toEqual(questionAmount);
+    expect(service.totalQuestions).toEqual(questionAmount);
   });
 });

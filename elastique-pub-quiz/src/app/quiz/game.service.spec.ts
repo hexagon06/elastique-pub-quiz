@@ -31,7 +31,6 @@ describe('GameService', () => {
 
     // it('should start without value', () => {
     //   getItemSpy.bind((key: string) => {
-    //     console.log('~~~~~~~~~~~~~');
     //     return undefined;
     //   });
     //   expect(service.getPlayerName()).toBeUndefined();

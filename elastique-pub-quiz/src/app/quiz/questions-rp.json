@@ -38,7 +38,7 @@
     ]
   },
   {
-    "text": "Het spel begint. De DM legt jullie uit dat Rolo, de zoon van de smid, vermist is. De smid questiont jullie om hulp hem te vinden."
+    "text": "Het spel begint. De DM legt jullie uit dat Rolo, de zoon van de smid, vermist is. De smid vraagt jullie om hulp hem te vinden."
   },
   {
     "text": "Jullie besluiten in het dorp rond te gaan vragen of iemand weet waar hij is? Ro'yal, een dorpeling, verteld dat hij hem in de put heeft zien vallen. Je vertrouwt het niet helemaal en questiont aan de DM of je Ro'yal vertrouwd.",
@@ -114,7 +114,44 @@
     ]
   },
   {
-    "texst": "Je rolde een 'natural 20' om het beest te raken",
+    "text": "Het lukt jullie om het ravijn over te steken. De monk kon inderdaad naar de overkant springen en bond een touw om een boom waar jullie gerbuik van konden maken. De DM besloot dat dit het makkelijk genoeg maakte om jullie advantage te geven.",
+    "question": "Wat gebeurt er als je advantage hebt?",
+    "options": [
+      {
+        "text": "Je telt 4 op bij je skill check"
+      },
+      {
+        "text": "Je haalt het automatisch"
+      },
+      {
+        "text": "Je rolt met 2 dobbelstenen en gebruikt de hoogste uitkomst",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "text": "Na een uur verder te hebben gelopen door het bos hoor je gegrom komen uit de bosjes naast je. Het blijkt een soort grote zwarte kat te zijn, maar met 6 benen en 2 starten met stekels.",
+    "question": "Wat is de naam van dit soort beest?",
+    "answer": "Displacer Beast"
+  },
+  {
+    "text": "Het is duidelijk dat dit een gevecht wordt.",
+    "question": "Wat zal de DM jullie vragen te rollen?",
+    "options": [
+      {
+        "text": "Combat roll"
+      },
+      {
+        "text": "Niets, het gevecht begint gewoon"
+      },
+      {
+        "text": "Initiative",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "text": "Je rolde een 'natural 20' om het beest te raken",
     "question": "Wat betekent dat als je de RAW volgt?",
     "options": [
       {
@@ -131,5 +168,51 @@
         "text": "Je mag je strength modifier optellen bij de schade."
       }
     ]
+  },
+  {
+    "text": "Na een zwaar gevecht overwinnen jullie het beest. Tijdens het gevecht kwam de HP van een van de groep op 0.",
+    "question": "Wat geberut er als iemands HP 0 wordt?",
+    "options": [
+      {
+        "text": "Het beest krijgt een bonus op de volgende aanval."
+      },
+      {
+        "text": "Het karakter raakt bewusteloos en moet wachten tot het gevecht over is. Dan wordt die weer wakker."
+      },
+      {
+        "text": "Het karakter gaat dood en een andere speler moet rollen om te kijken of het karakter gereanimeerd kan worden."
+      },
+      {
+        "text": "Het karakter raakt bewusteloos en de speler moet rollen om te kijken of het karakter dood gaat.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "text": "Jullie besluiten dat de karakters even tijd nodig hebben om wonden te verbinden en zich weer een beetje beter te voelen",
+    "question": "Wat gebeurt er niet tijdens deze Short Rest?",
+    "options": [
+      {
+        "text": "Spelers rollen rollen dobbelstenen om HP terug te krijgen."
+      },
+      {
+        "text": "De spelers krijgen de tijd om met elkaar in character te spreken."
+      },
+      {
+        "text": "De monk krijgt Ki-points terug."
+      },
+      {
+        "text": "De wizard krijgt spell slots terug.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "text": "Na een paar uur verder te zijn gegaan door het bos komen jullie bij een grot. Er staat een bordje voor de ingang, met de tekst 'Dit is de grot van ___, scheer je weg!'. De naam is doorgekrast, maar je kunt het toch net nog lezen.",
+    "question": "Het is de naam van de bedenker van D&D, wat is zijn naam?",
+    "answer": "Gary Gygax"
+  },
+  {
+    "text": "De DM zegt 'En dat is waar we verder gaan in de volgende sessie! bedankt voor het spelen, ik hoop dat jullie het leuk vonden!'"
   }
 ]

@@ -22,6 +22,7 @@ export class QuestionComponent implements OnInit {
   chosenOption?: MultipleChoiceOption;
 
   multiQuestion$!: Observable<MultipleChoiceQuestion | undefined>;
+  openQuestion$!: Observable<OpenQuestion | undefined>;
   flavorText$!: Observable<FlavorText | undefined>;
 
   constructor(
@@ -32,9 +33,9 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     this.name = this.gameService.getPlayerName();
     this.multiQuestion$ = this.gameService.currentQuestion$.pipe(
-      // tap(q => console.log(`q: ${q instanceof MultipleChoiceQuestion}`)),
-      // tap(q => console.log(q)),
       map(q => q instanceof MultipleChoiceQuestion ? q : undefined));
+    this.openQuestion$ = this.gameService.currentQuestion$.pipe(
+      map(q => q instanceof OpenQuestion ? q : undefined));
     this.flavorText$ = this.gameService.currentQuestion$.pipe(
       map(q => q instanceof Flavor ? q : undefined));
   }
@@ -42,12 +43,7 @@ export class QuestionComponent implements OnInit {
   onSubmit(answer: QuizAnswer): void {
     // todo: do this with rxjs
     const c = this.gameService.continueAdventure(answer);
-    // console.log(`c: ${c}`)
-    if (c) {
-      // console.log('set question')
-      // this.setQuestion();
-    } else {
-      // console.log('goto score')
+    if (!c) {
       this.router.navigate(['score']);
     }
   }

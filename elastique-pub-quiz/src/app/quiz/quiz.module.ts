@@ -14,6 +14,7 @@ import { MultipleChoiceComponent } from './multiple-choice/multiple-choice.compo
 import { FlavorTextComponent } from './flavor-text/flavor-text.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { OpenQuestionComponent } from './open-question/open-question.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ScoreComponent,
     MultipleChoiceComponent,
     FlavorTextComponent,
+    OpenQuestionComponent,
   ],
   imports: [
     CommonModule,
