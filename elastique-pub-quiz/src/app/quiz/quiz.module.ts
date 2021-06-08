@@ -15,6 +15,7 @@ import { FlavorTextComponent } from './flavor-text/flavor-text.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { OpenQuestionComponent } from './open-question/open-question.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { OpenQuestionComponent } from './open-question/open-question.component';
     MatRadioModule,
     MatExpansionModule,
     FlexLayoutModule,
+    MatDividerModule,
   ]
 })
 export class QuizModule { }

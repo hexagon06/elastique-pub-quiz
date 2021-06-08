@@ -5,29 +5,30 @@
     <p>Maarja, dit is toch echt een quiz. Zo heb je het gedaan:</p>
     <mat-accordion>
       <mat-expansion-panel hideToggle *ngFor="let question of questions; let i = index">
-        <mat-expansion-panel-header>
+        <mat-expansion-panel-header [class.is-correct]="question.isCorrect">
           <mat-panel-title>
             Vraag {{i}}
           </mat-panel-title>
-          <mat-panel-description>
-            {{question.isCorrect?'made it' : 'nope'}}
-          </mat-panel-description>
         </mat-expansion-panel-header>
         <div fxLayout="column">
-          <div fxFlex fxLayout="row">
+          <div class="description" fxFlex fxLayout="row">
             <div fxFlex>{{question.text}}</div>
+            <mat-divider></mat-divider>
           </div>
-          <div fxFlex fxLayout="row">
-            <div fxFlex="30">vraag: </div>
+          <div class="question" fxFlex fxLayout="row">
+            <div class="label" fxFlex="30">vraag: </div>
             <div fxFlex>{{question.question}}</div>
+            <mat-divider></mat-divider>
           </div>
-          <div fxFlex fxLayout="row">
-            <div fxFlex="30">jouw antwoord: </div>
-            <div fxFlex>{{question.answerGiven}}</div>
+          <div class="answer" fxFlex fxLayout="row">
+            <div class="label" fxFlex="30">jouw antwoord: </div>
+            <div class="answer" fxFlex>{{question.answerGiven}}</div>
+            <mat-divider></mat-divider>
           </div>
-          <div fxFlex fxLayout="row" *ngIf="!question.isCorrect">
-            <div fxFlex="30">goede antwoord: </div>
-            <div fxFlex>{{question.rightAnswer}}</div>
+          <div class="answer" fxFlex fxLayout="row" *ngIf="!question.isCorrect">
+            <div class="label" fxFlex="30">goede antwoord: </div>
+            <div class="answer" fxFlex>{{question.rightAnswer}}</div>
+            <mat-divider></mat-divider>
           </div>
         </div>
       </mat-expansion-panel>
