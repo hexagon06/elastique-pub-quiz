@@ -1,6 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Router } from '@angular/router';
+import { of } from 'rxjs';
+import { GameService } from '../game.service';
 import { StartComponent } from './start.component';
+
+class MockGameService {
+  getPlayerName() {
+    return '';
+  }
+  get currentQuestion$() {
+    return of(undefined);
+  }
+}
+class MockRouter {
+
+}
 
 describe('StartComponent', () => {
   let component: StartComponent;
@@ -8,9 +22,12 @@ describe('StartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StartComponent ]
-    })
-    .compileComponents();
+      declarations: [StartComponent],
+      providers: [
+        { provide: Router, useClass: MockRouter },
+        { provide: GameService, useClass: MockGameService }
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

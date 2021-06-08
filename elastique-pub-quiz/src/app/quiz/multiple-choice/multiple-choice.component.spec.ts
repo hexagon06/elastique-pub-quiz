@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { MultipleChoiceComponent } from './multiple-choice.component';
 
@@ -8,14 +9,15 @@ describe('MultipleChoiceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MultipleChoiceComponent ]
+      declarations: [MultipleChoiceComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MultipleChoiceComponent);
     component = fixture.componentInstance;
+    component.question$ = of(undefined);
     fixture.detectChanges();
   });
 

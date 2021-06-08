@@ -20,6 +20,10 @@ export class QuestionsService {
     return this.questions.length;
   }
 
+  get all() {
+    return this.questions;
+  }
+
   constructor() {
     this.questions = (data as any).default.map((d: any) => {
       // console.log(d);

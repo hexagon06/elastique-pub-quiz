@@ -22,12 +22,17 @@ export class GameService {
   }
   private maxQuestions = 0;
 
+  public get allQuestions(): QuizQuestion[] {
+    return this.questionsService.all;
+  }
+
   constructor(
     private questionsService: QuestionsService,
   ) {
     this.maxQuestions = questionsService.totalQuestions;
-    this.playerName = localStorage.getItem(NAME_KEY)?.toString();
-    const questionIndex = localStorage.getItem(QUESTION_KEY);
+    this.playerName = sessionStorage.getItem(NAME_KEY)?.toString();
+    const questionIndex = sessionStorage.getItem(QUESTION_KEY);
+    console.log(`session storage item: ${this.playerName}`)
     this.cQ = questionIndex ? parseInt(questionIndex) : -1;
     this.question$.next(this.getCurrentQuestion());
   }
@@ -38,7 +43,7 @@ export class GameService {
 
   public setPlayerName(name: string) {
     this.playerName = name;
-    localStorage.setItem(NAME_KEY, name);
+    sessionStorage.setItem(NAME_KEY, name);
   }
 
   public startGame(): void {

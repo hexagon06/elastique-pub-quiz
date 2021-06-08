@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
 import { MultipleChoiceComponent } from './multiple-choice/multiple-choice.component';
 import { FlavorTextComponent } from './flavor-text/flavor-text.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { FlavorTextComponent } from './flavor-text/flavor-text.component';
     MatGridListModule,
     MatCardModule,
     MatRadioModule,
+    MatExpansionModule,
+    FlexLayoutModule,
   ]
 })
 export class QuizModule { }

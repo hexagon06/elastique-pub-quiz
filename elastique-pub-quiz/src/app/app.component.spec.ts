@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'elastique-pub-quiz'`, () => {
+  it(`should have as title 'Elastique D&D Pub Quiz'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('elastique-pub-quiz');
+    expect(app.title).toEqual('Elastique D&D Pub Quiz');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('elastique-pub-quiz app is running!');
+    expect(compiled.querySelector('span.title ').textContent).toContain('Elastique D&D Pub Quiz');
   });
 });

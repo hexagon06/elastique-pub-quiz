@@ -26,8 +26,6 @@ export class MultipleChoiceComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(`comp:`)
-    console.log(this.question$)
     this.choiceForm = new FormGroup({
       choice: new FormControl(this.chosenOption, [
         Validators.required

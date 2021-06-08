@@ -1,2 +1,40 @@
-<p>score works!</p>
-<button (click)="finishGame($event)">Finish</button>
+<mat-card>
+  <mat-card-title>Zo! jij hebt veel meegemaakt!</mat-card-title>
+  <mat-card-content>
+    <p>Normaal zijn er niet echt goede en foute keuzes in Dungeons & Dragons.</p>
+    <p>Maarja, dit is toch echt een quiz. Zo heb je het gedaan:</p>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle *ngFor="let question of questions; let i = index">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Vraag {{i}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{question.isCorrect?'made it' : 'nope'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div fxLayout="column">
+          <div fxFlex fxLayout="row">
+            <div fxFlex>{{question.text}}</div>
+          </div>
+          <div fxFlex fxLayout="row">
+            <div fxFlex="30">vraag: </div>
+            <div fxFlex>{{question.question}}</div>
+          </div>
+          <div fxFlex fxLayout="row">
+            <div fxFlex="30">jouw antwoord: </div>
+            <div fxFlex>{{question.answerGiven}}</div>
+          </div>
+          <div fxFlex fxLayout="row" *ngIf="!question.isCorrect">
+            <div fxFlex="30">goede antwoord: </div>
+            <div fxFlex>{{question.rightAnswer}}</div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" type="submit" (click)="finishGame($event)">
+      << Nog een keer!</button>
+  </mat-card-actions>
+</mat-card>

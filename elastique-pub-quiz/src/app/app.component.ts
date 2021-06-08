@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'elastique-pub-quiz';
+  title = 'Elastique D&D Pub Quiz';
 }

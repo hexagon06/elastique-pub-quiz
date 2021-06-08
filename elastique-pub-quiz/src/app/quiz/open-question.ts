@@ -1,4 +1,3 @@
-import { stringify } from "@angular/compiler/src/util";
 import { Checkable, OpenProblem } from "./interfaces";
 
 export class OpenQuestion implements OpenProblem, Checkable {
@@ -10,7 +9,7 @@ export class OpenQuestion implements OpenProblem, Checkable {
     return this.givenAnswer !== undefined;
   }
   get isCorrect(): boolean | undefined {
-    return this.answer.toLowerCase() === this.givenAnswer?.toLowerCase();
+    return this.givenAnswer ? this.answer.toLowerCase() === this.givenAnswer.toLowerCase() : undefined;
   }
 
   constructor(problem: OpenProblem) {
@@ -25,8 +24,17 @@ export class OpenQuestion implements OpenProblem, Checkable {
   public giveAnswer(answer: string): void {
     this.givenAnswer = answer;
   }
+
+  public get answerGiven() {
+    return this.givenAnswer;
+  }
+
+  public get rightAnswer() {
+    // this one only to have the same interface as the other question type
+    return this.answer;
+  }
 }
 
 function isNullOrEmpty(s?: string) {
-  return s === '' || s === undefined;
+  return s === '' || s === undefined || s === null;
 }

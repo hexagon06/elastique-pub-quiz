@@ -26,6 +26,17 @@ export class MultipleChoiceQuestion implements MultipleChoiceProblem, Checkable 
   public giveAnswer(answer: number): void {
     this.givenAnswer = answer;
   }
+
+  public get answerGiven() {
+    if (this.givenAnswer !== undefined) {
+      return this.options[this.givenAnswer].text;
+    }
+    return undefined;
+  }
+
+  public get rightAnswer() {
+    return this.options.find(o => o.isCorrect)?.text;
+  }
 }
 
 function shuffle<T>(array: T[]): T[] {
