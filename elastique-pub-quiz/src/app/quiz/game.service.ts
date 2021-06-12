@@ -10,6 +10,9 @@ const QUESTION_KEY = 'quiz-question-id';
   providedIn: 'root'
 })
 export class GameService {
+  private question$ = new BehaviorSubject<QuizQuestion | undefined>(undefined); // is set in onInit
+  public currentQuestion$ = this.question$.pipe(); // just to expose it as an observable instead of a subject
+
   private playerName?: string;
   private cQ: number; // because we do this several times at multiple places we use the setter
   private get currentQuestion() {
@@ -17,7 +20,7 @@ export class GameService {
   };
   private set currentQuestion(n: number) {
     this.cQ = n;
-    localStorage.setItem(QUESTION_KEY, `${n}`);
+    sessionStorage.setItem(QUESTION_KEY, `${n}`);
     this.question$.next(this.getCurrentQuestion());
   }
   private maxQuestions = 0;
@@ -88,11 +91,5 @@ export class GameService {
 
     return this.currentQuestion < this.maxQuestions;
   }
-
-  //------------------REACTIVE----------------------
-
-  private question$ = new BehaviorSubject<QuizQuestion | undefined>(undefined);
-  public currentQuestion$ = this.question$.pipe(); // just to expose it as an observable instead of a subject
-
 
 }
