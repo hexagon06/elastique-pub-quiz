@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, from, Observable, pipe } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { isProblem, QuizAnswer, QuizQuestion, isMultipleChoiceAnswer, isMultipleChoiceProblem, isOpenProblem, isOpenAnswer } from './interfaces';
 import { QuestionsService } from './questions.service';
 
@@ -10,20 +11,16 @@ const QUESTION_KEY = 'quiz-question-id';
   providedIn: 'root'
 })
 export class GameService {
-  private question$ = new BehaviorSubject<QuizQuestion | undefined>(undefined); // is set in onInit
-  public currentQuestion$ = this.question$.pipe(); // just to expose it as an observable instead of a subject
-
   private playerName?: string;
-  private cQ: number; // because we do this several times at multiple places we use the setter
-  private get currentQuestion() {
-    return this.cQ;
-  };
-  private set currentQuestion(n: number) {
-    this.cQ = n;
-    sessionStorage.setItem(QUESTION_KEY, `${n}`);
-    this.question$.next(this.getCurrentQuestion());
-  }
-  private maxQuestions = 0;
+  private currentQuestionIndex$ = new BehaviorSubject<number>(-1);
+  public currentQuestion$: Observable<QuizQuestion | undefined>; // derived from currentQuestionIndex$
+
+  /** Get the current index in the ful list of questions */
+  public get questionIndex() { return this.currentQuestionIndex$.getValue(); }
+  public get questionIndex$() { return this.currentQuestionIndex$.pipe(); }
+
+  private maxQuestions: number;
+  public get questionCount() { return this.maxQuestions; }
 
   public get allQuestions(): QuizQuestion[] {
     return this.questionsService.all;
@@ -35,8 +32,11 @@ export class GameService {
     this.maxQuestions = questionsService.totalQuestions;
     this.playerName = sessionStorage.getItem(NAME_KEY)?.toString();
     const questionIndex = sessionStorage.getItem(QUESTION_KEY);
-    this.cQ = questionIndex ? parseInt(questionIndex) : -1;
-    this.question$.next(this.getCurrentQuestion());
+    this.currentQuestionIndex$.next(questionIndex ? parseInt(questionIndex) : -1);
+    this.currentQuestion$ = this.currentQuestionIndex$.pipe(
+      tap(i => sessionStorage.setItem(QUESTION_KEY, `${i}`)), // as a side effect of a new index value we also store it in the session
+      map(i => i !== -1 ? this.questionsService.get(i) : undefined) // we map the index to an actual question
+    );
   }
 
   public getPlayerName(): string | undefined {
@@ -50,20 +50,20 @@ export class GameService {
 
   public startGame(): void {
     // would normally let the server know this player is ready
-    this.currentQuestion = 0;
+    this.currentQuestionIndex$.next(0);
   }
 
   public finishGame(): void {
-    this.currentQuestion = -1;
+    this.currentQuestionIndex$.next(-1);
   }
 
   /**
    * Get the current question of the quiz.
    * @returns the current question or undefined when the quiz has not started yet
    */
-  public getCurrentQuestion(): QuizQuestion | undefined {
-    if (this.currentQuestion !== -1) {
-      return this.questionsService.get(this.currentQuestion);
+  private getCurrentQuestion(): QuizQuestion | undefined {
+    if (this.questionIndex !== -1) {
+      return this.questionsService.get(this.questionIndex);
     }
     return undefined;
   }
@@ -80,16 +80,15 @@ export class GameService {
         question.giveAnswer(answer.answer);
       }
       if (question.isAnswered) {
-        this.currentQuestion++;
+        this.currentQuestionIndex$.next(this.questionIndex + 1);
       } else {
         throw new Error(`the question '${question.question}' was not answered`);
       }
     } else {
       // is flavor text
-      this.currentQuestion++;
+      this.currentQuestionIndex$.next(this.questionIndex + 1);
     }
 
-    return this.currentQuestion < this.maxQuestions;
+    return this.questionIndex < this.maxQuestions;
   }
-
 }
