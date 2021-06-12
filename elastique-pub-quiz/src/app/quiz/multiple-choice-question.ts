@@ -1,9 +1,11 @@
 import { Checkable, MultipleChoiceOption, MultipleChoiceProblem, OpenProblem } from "./interfaces";
 
 export class MultipleChoiceQuestion implements MultipleChoiceProblem, Checkable {
-  options: MultipleChoiceOption[];
-  text: string;
-  question: string;
+  readonly options: MultipleChoiceOption[];
+  readonly text: string;
+  readonly question: string;
+  readonly image: string;
+
   private givenAnswer?: number;
 
   get isAnswered(): boolean {
@@ -21,6 +23,7 @@ export class MultipleChoiceQuestion implements MultipleChoiceProblem, Checkable 
     this.options = shuffle(problem.options);
     this.text = problem.text;
     this.question = problem.question;
+    this.image = problem.image;
   }
 
   public giveAnswer(answer: number): void {

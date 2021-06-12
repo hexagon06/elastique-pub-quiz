@@ -16,6 +16,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { OpenQuestionComponent } from './open-question/open-question.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { QuizTitleComponent } from './quiz-title/quiz-title.component';
+import { QuizFooterComponent } from './quiz-footer/quiz-footer.component';
+import { QuizOptionComponent } from './quiz-option/quiz-option.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MultipleChoiceComponent,
     FlavorTextComponent,
     OpenQuestionComponent,
+    QuizTitleComponent,
+    QuizFooterComponent,
+    QuizOptionComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +45,10 @@ import { MatDividerModule } from '@angular/material/divider';
     MatExpansionModule,
     FlexLayoutModule,
     MatDividerModule,
+  ],
+  exports: [
+    QuizTitleComponent,
+    QuizFooterComponent,
   ]
 })
 export class QuizModule { }

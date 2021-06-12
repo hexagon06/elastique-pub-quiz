@@ -18,7 +18,10 @@ export class MultipleChoiceComponent implements OnInit {
   // each of these can be undefined, when the question is not a multiple choice question.
   text$!: Observable<string | undefined>
   questionText$!: Observable<string | undefined>
-  options$!: Observable<MultipleChoiceOption[] | undefined>
+  option1$!: Observable<MultipleChoiceOption | undefined>
+  option2$!: Observable<MultipleChoiceOption | undefined>
+  option3$!: Observable<MultipleChoiceOption | undefined>
+  option4$!: Observable<MultipleChoiceOption | undefined>
 
   chosenOption?: number;
   choiceForm!: FormGroup;
@@ -36,12 +39,15 @@ export class MultipleChoiceComponent implements OnInit {
       tap(() => this.choiceForm.controls['choice'].setValue(undefined)),
       map(q => q?.text));
     this.questionText$ = this.question$.pipe(map(q => q?.question));
-    this.options$ = this.question$.pipe(map(q => q?.options));
+    this.option1$ = this.question$.pipe(map(q => q?.options[0]));
+    this.option2$ = this.question$.pipe(map(q => q?.options[1]));
+    this.option3$ = this.question$.pipe(map(q => q?.options[2]));
+    this.option4$ = this.question$.pipe(map(q => q?.options[3]));
   }
 
-  onSubmit() {
-    if (this.choiceForm.valid) {
-      this.submitEvent.next({ answer: this.choiceForm.get('choice')?.value });
+  onSubmit(choice: number) {
+    if (choice !== undefined) {
+      this.submitEvent.next({ answer: choice });
     }
   }
 }

@@ -4,6 +4,8 @@ export class OpenQuestion implements OpenProblem, Checkable {
   readonly answer: string;
   readonly text: string;
   readonly question: string;
+  readonly image: string;
+
   private givenAnswer?: string;
   get isAnswered(): boolean {
     return this.givenAnswer !== undefined;
@@ -19,6 +21,7 @@ export class OpenQuestion implements OpenProblem, Checkable {
     this.answer = problem.answer;
     this.text = problem.text;
     this.question = problem.question;
+    this.image = problem.image;
   }
 
   public giveAnswer(answer: string): void {

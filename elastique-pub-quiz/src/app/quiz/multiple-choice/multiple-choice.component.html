@@ -1,17 +1,8 @@
-<form [formGroup]="choiceForm" (ngSubmit)="onSubmit()">
-  <mat-card>
-    <mat-card-content>
-      <p>{{text$ | async}}</p>
-      <mat-label id="question-label">{{questionText$ | async}}</mat-label>
-      <mat-radio-group aria-labelledby="question-label" class="multiple-choice-group" formControlName="choice" required>
-        <mat-radio-button *ngFor="let option of options$ | async; let i = index" [value]="i"
-                          class="option-radio-button">
-          {{option.text}}
-        </mat-radio-button>
-      </mat-radio-group>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button color="primary" type="submit" [disabled]="!choiceForm.valid">Ga verder >></button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+<app-quiz-option [option]="option1$ | async" [value]="0" (optionSelected)="onSubmit($event)" class="red">
+</app-quiz-option>
+<app-quiz-option [option]="option2$ | async" [value]="1" (optionSelected)="onSubmit($event)" class="blue">
+</app-quiz-option>
+<app-quiz-option [option]="option3$ | async" [value]="2" (optionSelected)="onSubmit($event)" class="yellow">
+</app-quiz-option>
+<app-quiz-option [option]="option4$ | async" [value]="3" (optionSelected)="onSubmit($event)" class="green">
+</app-quiz-option>

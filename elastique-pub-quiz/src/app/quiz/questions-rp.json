@@ -2,6 +2,7 @@
   {
     "text": "Bij het aanmaken van jouw karakter heeft de DM gezegd dat het alleen een humanoid mocht zijn.",
     "question": "Welk ras viel af?",
+    "image": "quiz_races.jpg",
     "options": [
       {
         "text": "Elf"
@@ -21,6 +22,7 @@
   {
     "text": "Bij het begin van het spel heeft de DM een aantal regels uitgelegd.",
     "question": "Hoeveel zijden heeft de belangrijkste dobbelsteen?",
+    "image": "quiz_dice.jpg",
     "options": [
       {
         "text": "6"
@@ -38,11 +40,13 @@
     ]
   },
   {
-    "text": "Het spel begint. De DM legt jullie uit dat Rolo, de zoon van de smid, vermist is. De smid vraagt jullie om hulp hem te vinden."
+    "text": "Het spel begint. De DM legt jullie uit dat Rolo, de zoon van de smid, vermist is. De smid vraagt jullie om hulp hem te vinden.",
+    "image": "quiz_smith.jpg"
   },
   {
-    "text": "Jullie besluiten in het dorp rond te gaan vragen of iemand weet waar hij is? Ro'yal, een dorpeling, verteld dat hij hem in de put heeft zien vallen. Je vertrouwt het niet helemaal en questiont aan de DM of je Ro'yal vertrouwd.",
+    "text": "Jullie besluiten in het dorp rond te gaan vragen of iemand weet waar hij is? Ro'yal, een dorpeling, verteld dat hij hem in de put heeft zien vallen. Je vertrouwt het niet helemaal en vraagt aan de DM of je Ro'yal vertrouwd.",
     "question": "Welke ability moet je gebruiken om te bepalen of je hem gelooft?",
+    "image": "Quiz_askingaround.jpg",
     "options": [
       {
         "text": "Charisma"
@@ -62,6 +66,7 @@
   {
     "text": "Ro'yal bleek een leugenaar te zijn. Na wat verder rond te vragen komen jullie er achter dat Rollo het bos is ingegaan.",
     "question": "Welke skill ga je gebruiken om zijn sporen te volgen?",
+    "image": "quiz_sporen.jpg",
     "options": [
       {
         "text": "Pathfinding"
@@ -81,6 +86,7 @@
   {
     "text": "Je hebt een 'natural one' gerold op je skill check om de sporen te vinden",
     "question": "Wat betekent dat als je de RAW volgt?",
+    "image": "quiz_crit1.jpeg",
     "options": [
       {
         "text": "Je hebt een 'critical failure' gerold en faalt dus automatisch."
@@ -100,6 +106,7 @@
   {
     "text": "Jullie zijn aangekomen bij een ravijn en je dacht dat er een regel was die de monk erg ver liet springen.",
     "question": "In welk boek zou je die regel opzoeken?",
+    "image": "quiz_books.jpg",
     "options": [
       {
         "text": "MM"
@@ -110,12 +117,16 @@
       },
       {
         "text": "DMG"
+      },
+      {
+        "text": "CoS"
       }
     ]
   },
   {
     "text": "Het lukt jullie om het ravijn over te steken. De monk kon inderdaad naar de overkant springen en bond een touw om een boom waar jullie gerbuik van konden maken. De DM besloot dat dit het makkelijk genoeg maakte om jullie advantage te geven.",
     "question": "Wat gebeurt er als je advantage hebt?",
+    "image": "quiz_rope.jpg",
     "options": [
       {
         "text": "Je telt 4 op bij je skill check"
@@ -126,17 +137,22 @@
       {
         "text": "Je rolt met 2 dobbelstenen en gebruikt de hoogste uitkomst",
         "isCorrect": true
+      },
+      {
+        "text": "Dan tel je het totaal van iedereen bij elkaar op."
       }
     ]
   },
   {
     "text": "Na een uur verder te hebben gelopen door het bos hoor je gegrom komen uit de bosjes naast je. Het blijkt een soort grote zwarte kat te zijn, maar met 6 benen en 2 staarten met stekels.",
     "question": "Wat is de naam van dit soort beest?",
+    "image": "quiz_kitty.jpg",
     "answer": "Displacer Beast"
   },
   {
     "text": "Het is duidelijk dat dit een gevecht wordt.",
     "question": "Wat zal de DM jullie vragen te rollen?",
+    "image": "quiz_rollforinitiative.jpg",
     "options": [
       {
         "text": "Combat roll"
@@ -147,12 +163,16 @@
       {
         "text": "Initiative",
         "isCorrect": true
+      },
+      {
+        "text": "Reaction"
       }
     ]
   },
   {
     "text": "Je rolde een 'natural 20' om het beest te raken",
     "question": "Wat betekent dat als je de RAW volgt?",
+    "image": "quiz_nat20v1.jpeg",
     "options": [
       {
         "text": "Je raakt automatisch."
@@ -172,6 +192,7 @@
   {
     "text": "Na een zwaar gevecht overwinnen jullie het beest. Tijdens het gevecht kwam de HP van een van de groep op 0.",
     "question": "Wat geberut er als iemands HP 0 wordt?",
+    "image": "quiz_0hp.jpg",
     "options": [
       {
         "text": "Het beest krijgt een bonus op de volgende aanval."
@@ -191,6 +212,7 @@
   {
     "text": "Jullie besluiten dat de karakters even tijd nodig hebben om wonden te verbinden en zich weer een beetje beter te voelen",
     "question": "Wat gebeurt er niet tijdens deze Short Rest?",
+    "image": "quiz_rest.jpg",
     "options": [
       {
         "text": "Spelers rollen rollen dobbelstenen om HP terug te krijgen."
@@ -210,9 +232,11 @@
   {
     "text": "Na een paar uur verder te zijn gegaan door het bos komen jullie bij een grot. Er staat een bordje voor de ingang, met de tekst 'Dit is de grot van ___, scheer je weg!'. De naam is doorgekrast, maar je kunt het toch net nog lezen.",
     "question": "Het is de naam van de bedenker van D&D, wat is zijn naam?",
+    "image": "quiz_cave.jpg",
     "answer": "Gary Gygax"
   },
   {
-    "text": "De DM zegt 'En dat is waar we verder gaan in de volgende sessie! bedankt voor het spelen, ik hoop dat jullie het leuk vonden!'"
+    "text": "De DM zegt 'En dat is waar we verder gaan in de volgende sessie! bedankt voor het spelen, ik hoop dat jullie het leuk vonden!'",
+    "image": "quiz_dnd.jpg"
   }
 ]

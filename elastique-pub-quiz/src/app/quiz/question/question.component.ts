@@ -24,6 +24,8 @@ export class QuestionComponent implements OnInit {
   multiQuestion$!: Observable<MultipleChoiceQuestion | undefined>;
   openQuestion$!: Observable<OpenQuestion | undefined>;
   flavorText$!: Observable<FlavorText | undefined>;
+  text$!: Observable<string | undefined>;
+  image$!: Observable<string | undefined>;
 
   constructor(
     private router: Router,
@@ -32,12 +34,16 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.name = this.gameService.getPlayerName();
+    this.text$ = this.gameService.currentQuestion$.pipe(
+      map(q => q?.text));
     this.multiQuestion$ = this.gameService.currentQuestion$.pipe(
       map(q => q instanceof MultipleChoiceQuestion ? q : undefined));
     this.openQuestion$ = this.gameService.currentQuestion$.pipe(
       map(q => q instanceof OpenQuestion ? q : undefined));
     this.flavorText$ = this.gameService.currentQuestion$.pipe(
       map(q => q instanceof Flavor ? q : undefined));
+    this.image$ = this.gameService.currentQuestion$.pipe(
+      map(q => `assets/images/${q?.image}`));
   }
 
   onSubmit(answer: QuizAnswer): void {

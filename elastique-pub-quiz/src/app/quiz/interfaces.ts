@@ -4,11 +4,13 @@ import { OpenQuestion } from "./open-question";
 
 export interface FlavorText {
   text: string;
+  image: string;
 }
 
 export interface BaseProblem {
   text: string;
   question: string;
+  image: string;
 }
 
 export interface OpenProblem extends BaseProblem {
@@ -33,13 +35,15 @@ export interface Checkable {
 
 export function isFlavorText(obj: any): obj is FlavorText {
   const t = obj as FlavorText;
-  return t.text !== undefined && typeof (t.text) === 'string';
+  return t.text !== undefined && typeof (t.text) === 'string' &&
+    t.image !== undefined && typeof (t.image) === 'string';
 }
 
 export function isProblem(obj: any): obj is BaseProblem {
   const q = obj as BaseProblem;
   return q.text !== undefined && typeof (q.text) === 'string'
-    && q.question !== undefined && typeof (q.question) === 'string';
+    && q.question !== undefined && typeof (q.question) === 'string'
+    && q.image !== undefined && typeof (q.image) === 'string';
 }
 
 export function isOpenProblem(obj: any): obj is OpenProblem {
