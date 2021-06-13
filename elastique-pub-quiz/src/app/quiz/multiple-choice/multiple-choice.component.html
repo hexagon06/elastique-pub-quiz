@@ -1,8 +1,12 @@
-<app-quiz-option [option]="option1$ | async" [value]="0" (optionSelected)="onSubmit($event)" class="red">
+<app-quiz-option [option]="option1$ | async" [value]="0" shape="TRIANGLE" (optionSelected)="onSubmit($event)"
+                 class="red">
 </app-quiz-option>
-<app-quiz-option [option]="option2$ | async" [value]="1" (optionSelected)="onSubmit($event)" class="blue">
+<app-quiz-option [option]="option2$ | async" [value]="1" shape="DIAMOND" (optionSelected)="onSubmit($event)"
+                 class="blue">
 </app-quiz-option>
-<app-quiz-option [option]="option3$ | async" [value]="2" (optionSelected)="onSubmit($event)" class="yellow">
+<app-quiz-option [option]="option3$ | async" [value]="2" shape="CIRCLE" (optionSelected)="onSubmit($event)"
+                 class="yellow">
 </app-quiz-option>
-<app-quiz-option [option]="option4$ | async" [value]="3" (optionSelected)="onSubmit($event)" class="green">
+<app-quiz-option [option]="option4$ | async" [value]="3" shape="SQUARE" (optionSelected)="onSubmit($event)"
+                 class="green">
 </app-quiz-option>

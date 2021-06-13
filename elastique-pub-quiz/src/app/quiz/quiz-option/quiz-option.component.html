@@ -1,3 +1,26 @@
 <div class="option" (click)="onClick()">
+  <div *ngIf="shape === 'SQUARE'" class="icon">
+    <span><svg id="SQUARE" viewBox="0 0 32 32" focusable="false" stroke="rgba(0, 0, 0, 0.15)" stroke-width="1.3px">
+        <path d="M7,7 L25,7 L25,25 L7,25 L7,7 Z"></path>
+      </svg></span>
+  </div>
+
+  <div *ngIf="shape === 'CIRCLE'" class="icon"><span>
+      <svg id="CIRCLE" viewBox="0 0 32 32" focusable="false" stroke="rgba(0, 0, 0, 0.15)" stroke-width="1.3px">
+        <path
+              d="M16,27 C9.92486775,27 5,22.0751322 5,16 C5,9.92486775 9.92486775,5 16,5 C22.0751322,5 27,9.92486775 27,16 C27,22.0751322 22.0751322,27 16,27 Z">
+        </path>
+      </svg></span>
+  </div>
+
+  <div *ngIf="shape === 'DIAMOND'" class="icon"><span>
+      <svg id="DIAMOND" viewBox="0 0 32 32" focusable="false" stroke="rgba(0, 0, 0, 0.15)" stroke-width="1.3px">
+        <path d="M4,16.0038341 L16,4 L28,16.0007668 L16,28 L4,16.0038341 Z"></path>
+      </svg></span></div>
+
+  <div *ngIf="shape === 'TRIANGLE'" class="icon"><span>
+      <svg id="TRIANGLE" viewBox="0 0 32 32" focusable="false" stroke="rgba(0, 0, 0, 0.15)" stroke-width="1.3px">
+        <path d="M27,24.559972 L5,24.559972 L16,7 L27,24.559972 Z"></path>
+      </svg></span></div>
   {{option?.text}}
 </div>

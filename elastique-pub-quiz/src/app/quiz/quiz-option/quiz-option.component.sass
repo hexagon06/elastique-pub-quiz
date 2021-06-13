@@ -5,26 +5,40 @@
   min-height: 2.25rem
   width: calc(50% - 3rem)
   border-radius: 4px
+  box-shadow: rgb(0 0 0 / 15%) 0px -0.25rem 0px 0px inset
+  box-sizing: border-box
 
   &.red
     background-color: rgb(226, 27, 60)
     margin-right:.35em
     margin-bottom:.35em
 
+    &:hover
+      background-color: rgb(208, 25, 55)
+
   &.blue
     background-color: rgb(19, 104, 206)
     margin-left:.35em
     margin-bottom:.35em
+
+    &:hover
+      background-color: rgb(18, 96, 190)
 
   &.yellow
     background-color: rgb(216, 158, 0)
     margin-right:.35em
     margin-top:.35em
 
+    &:hover
+      background-color: rgb(199, 146, 0)
+
   &.green
     background-color: rgb(38, 137, 12)
     margin-left:.35em
     margin-top:.35em
+
+    &:hover
+      background-color: rgb(35, 126, 11)
 
 .option
   padding: 5px
@@ -39,5 +53,25 @@
   width: 100%
   height: 100%
   content-align: stretch
+  cursor: hand
 
+  color: white
+  fill: white
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif
+  text-align: left
+  font-size: calc(0.5rem + 2.78667vmin)
+  font-weight: 600
+  line-height: 1.25
+
+  .icon
+    margin-right:.25rem
+
+    span
+      display: inline-block
+      vertical-align: middle
+      width: 5.57333vmin
+      height: 5.57333vmin
+
+      svg
+        paint-order: stroke
 

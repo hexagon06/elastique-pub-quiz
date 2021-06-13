@@ -9,6 +9,7 @@ import { MultipleChoiceOption } from '../interfaces';
 export class QuizOptionComponent implements OnInit {
   @Input() option!: MultipleChoiceOption | undefined | null;
   @Input() value!: number;
+  @Input() shape!: string;
   @Output() optionSelected = new EventEmitter<any>();
 
   constructor() { }
