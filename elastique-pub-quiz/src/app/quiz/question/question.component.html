@@ -2,9 +2,11 @@
   <img src="{{image$ | async}}">
   <p class="text">{{text$ | async}}</p>
 </div>
-<app-multiple-choice *ngIf="multiQuestion$ | async" [name]="name!" [question$]="multiQuestion$"
-                     (submitEvent)="onSubmit($event)"></app-multiple-choice>
-<app-flavor-text *ngIf="flavorText$ | async" [question$]="flavorText$" (submitEvent)="onSubmit($event)">
-</app-flavor-text>
-<app-open-question *ngIf="openQuestion$ | async" [name]="name!" [question$]="openQuestion$"
-                   (submitEvent)="onSubmit($event)"></app-open-question>
+<div class="answers">
+  <app-multiple-choice *ngIf="multiQuestion$ | async" [name]="name!" [question$]="multiQuestion$"
+                       (submitEvent)="onSubmit($event)"></app-multiple-choice>
+  <app-flavor-text *ngIf="flavorText$ | async" [question$]="flavorText$" (submitEvent)="onSubmit($event)">
+  </app-flavor-text>
+  <app-open-question *ngIf="openQuestion$ | async" [name]="name!" [question$]="openQuestion$"
+                     (submitEvent)="onSubmit($event)"></app-open-question>
+</div>
