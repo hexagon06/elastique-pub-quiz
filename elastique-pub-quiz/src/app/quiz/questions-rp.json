@@ -1,7 +1,7 @@
 [
   {
     "text": "Bij het aanmaken van jouw karakter heeft de DM gezegd dat het alleen een humanoid mocht zijn.",
-    "question": "Welk ras viel af?",
+    "question": "Welk ras is geen humanoid?",
     "image": "quiz_races.jpg",
     "options": [
       {
@@ -45,7 +45,7 @@
   },
   {
     "text": "Jullie besluiten in het dorp rond te gaan vragen of iemand weet waar hij is? Ro'yal, een dorpeling, verteld dat hij hem in de put heeft zien vallen. Je vertrouwt het niet helemaal en vraagt aan de DM of je Ro'yal vertrouwd.",
-    "question": "Welke ability moet je gebruiken om te bepalen of je hem gelooft?",
+    "question": "Welke ability moet je gebruiken om te bepalen of je iemand geloofd?",
     "image": "Quiz_askingaround.jpg",
     "options": [
       {
@@ -65,7 +65,7 @@
   },
   {
     "text": "Ro'yal bleek een leugenaar te zijn. Na wat verder rond te vragen komen jullie er achter dat Rollo het bos is ingegaan.",
-    "question": "Welke skill ga je gebruiken om zijn sporen te volgen?",
+    "question": "Welke skill ga je gebruiken om sporen te volgen in het bos?",
     "image": "quiz_sporen.jpg",
     "options": [
       {
@@ -85,7 +85,7 @@
   },
   {
     "text": "Je hebt een 'natural one' gerold op je skill check om de sporen te vinden",
-    "question": "Wat betekent dat als je de RAW volgt?",
+    "question": "Wat zeggen de RAW bij een natural 1 op een skill check?",
     "image": "quiz_crit1.jpeg",
     "options": [
       {
@@ -105,7 +105,7 @@
   },
   {
     "text": "Jullie zijn aangekomen bij een ravijn en je dacht dat er een regel was die de monk erg ver liet springen.",
-    "question": "In welk boek zou je die regel opzoeken?",
+    "question": "In welk boek zou je een regel over een karakter class regel opzoeken?",
     "image": "quiz_books.jpg",
     "options": [
       {
@@ -151,7 +151,7 @@
   },
   {
     "text": "Het is duidelijk dat dit een gevecht wordt.",
-    "question": "Wat zal de DM jullie vragen te rollen?",
+    "question": "Wat zal de DM jullie vragen te rollen bij het begin van een gevecht?",
     "image": "quiz_rollforinitiative.jpg",
     "options": [
       {
@@ -171,7 +171,7 @@
   },
   {
     "text": "Je rolde een 'natural 20' om het beest te raken",
-    "question": "Wat betekent dat als je de RAW volgt?",
+    "question": "Wat zeggen de RAW bij een natural 20 bij een aanval?",
     "image": "quiz_nat20v1.jpeg",
     "options": [
       {
@@ -190,7 +190,7 @@
     ]
   },
   {
-    "text": "Na een zwaar gevecht overwinnen jullie het beest. Tijdens het gevecht kwam de HP van een van de groep op 0.",
+    "text": "Na een zwaar gevecht doden jullie het beest. Tijdens het gevecht kwam de HP van een van de groep op 0.",
     "question": "Wat gebeurt er als iemands HP 0 wordt?",
     "image": "quiz_0hp.jpg",
     "options": [
@@ -198,20 +198,20 @@
         "text": "Het beest krijgt een bonus op de volgende aanval."
       },
       {
-        "text": "Het karakter raakt bewusteloos en moet wachten tot het gevecht over is. Dan wordt die weer wakker."
+        "text": "Die raakt bewusteloos en moet wachten tot het gevecht over is."
       },
       {
-        "text": "Het karakter gaat dood en een andere speler moet rollen om te kijken of het karakter gereanimeerd kan worden."
+        "text": "Het karakter is dood, de speler mag een nieuw karakter maken."
       },
       {
-        "text": "Het karakter raakt bewusteloos en de speler moet rollen om te kijken of het karakter dood gaat.",
+        "text": "Die raakt bewusteloos, er wordt gerold om te kijken of die het overleeft.",
         "isCorrect": true
       }
     ]
   },
   {
     "text": "Jullie besluiten dat de karakters even tijd nodig hebben om wonden te verbinden en zich weer een beetje beter te voelen",
-    "question": "Wat gebeurt er niet tijdens deze Short Rest?",
+    "question": "Wat gebeurt er niet tijdens een Short Rest?",
     "image": "quiz_rest.jpg",
     "options": [
       {

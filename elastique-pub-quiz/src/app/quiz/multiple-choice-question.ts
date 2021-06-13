@@ -43,7 +43,7 @@ export class MultipleChoiceQuestion implements MultipleChoiceProblem, Checkable 
 }
 
 function shuffle<T>(array: T[]): T[] {
-  return array.sort(() => Math.fround(Math.random()) === 0 ? -1 : 1);
+  return array.sort(() => Math.round(Math.random()) === 0 ? -1 : 1);
 }
 
 function isNullOrEmpty(s?: string) {
