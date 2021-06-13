@@ -1,8 +1,10 @@
+import { Injectable } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { QuestionsService } from '../questions.service';
 import { FlavorTextComponent } from './flavor-text.component';
 
+@Injectable()
 class MockQuestionService extends QuestionsService {
 
 }

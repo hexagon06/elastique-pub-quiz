@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { GameService } from './game.service';
 import { QuestionsService } from './questions.service';
 
+@Injectable()
 class MockQuestionService extends QuestionsService {
 
 }

@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Elastique D&D Pub Quiz');
   });
 
-  it('should render title', () => {
+  it('should have main content', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('span.title ').textContent).toContain('Elastique D&D Pub Quiz');
+    expect(compiled.querySelector('.main-content')).toBeDefined();
   });
 });

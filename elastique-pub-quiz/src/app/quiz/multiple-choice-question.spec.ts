@@ -8,6 +8,7 @@ describe('MultipleChoiceQuestion', () => {
     questionSource = {
       text: "the text source",
       question: 'the question source',
+      image: 'test.png',
       options: [
         { text: 'option 1 text', isCorrect: true },
         { text: 'option 2 text' },
@@ -42,10 +43,11 @@ describe('MultipleChoiceQuestion', () => {
       expect(() => new MultipleChoiceQuestion(questionSource)).toThrowError();
     });
 
-    it('should assign text and question from the source', () => {
+    it('should assign text, image and question from the source', () => {
       const question = new MultipleChoiceQuestion(questionSource);
       expect(question.text).toEqual(questionSource.text);
       expect(question.question).toEqual(questionSource.question);
+      expect(question.image).toEqual(questionSource.image);
     });
 
 

@@ -7,6 +7,7 @@ describe('OpenQuestion', () => {
     questionSource = {
       text: 'text source',
       question: 'question source',
+      image: 'test.png',
       answer: 'answer source',
     };
   });
@@ -30,12 +31,13 @@ describe('OpenQuestion', () => {
       expect(() => new OpenQuestion(questionSource)).toThrowError();
     });
 
-    it('should use answer, text and question from the source', () => {
+    it('should use answer, text, image and question from the source', () => {
       const question = new OpenQuestion(questionSource);
 
       expect(question.text).toEqual(questionSource.text);
       expect(question.question).toEqual(questionSource.question);
       expect(question.answer).toEqual(questionSource.answer);
+      expect(question.image).toEqual(questionSource.image);
     })
   });
 
